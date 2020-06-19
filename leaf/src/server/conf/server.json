@@ -1,0 +1,6 @@
+{
+  "name": "leafServer",
+  "version": "1.0.0",
+  "TCPAddr": "127.0.0.1:3456",
+  "LogLevel": ""
+}

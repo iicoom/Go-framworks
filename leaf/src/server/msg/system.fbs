@@ -1,0 +1,37 @@
+namespace MyGame.Sample;
+enum RPCMode : byte {
+    Server = 0,
+    Others = 1,
+    All = 2,
+    Buffered = 3,
+}
+
+enum ParameterType : byte {
+    FBool = 1,
+    FByte = 2,
+    FInt = 3,
+    FLong = 4,
+    FShort = 5,
+    FFloat = 6,
+    FDouble = 7,
+    FString = 8,
+    FBuffer = 9,
+}
+
+table RpcToClient {
+    sync_id:int;
+    func_name:string;
+    param_data:[ubyte];
+    param_types:[ParameterType];
+    param_size:[ushort];
+}
+
+table RpcToServer {
+    mode:RPCMode;
+    isReliable:bool;
+    sync_id:int;
+    func_name:string;
+    param_data:[ubyte];
+    param_types:[ParameterType];
+    param_size:[ushort];
+}
